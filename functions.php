@@ -318,4 +318,3 @@ require_once(get_template_directory() . '/inc/font-awesome-5.php');
 
 
 require_once(get_template_directory() . '/inc/author-widget.php');
-//require_once(get_template_directory() . '/inc/bootstrap-shortcodes.php');
