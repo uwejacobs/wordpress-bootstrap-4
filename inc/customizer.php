@@ -21,8 +21,8 @@ function wp_bt_customize_register( $wp_customize ) {
     $wp_customize->add_section(
         'typography',
         array(
-            'title' => __( 'Preset Styles', 'wp-bt' ),
-            //'description' => __( 'This is a section for the typography', 'wp-bt' ),
+            'title' => __( 'Preset Styles', 'wp-bootstrap-4' ),
+            //'description' => __( 'This is a section for the typography', 'wp-bootstrap-4' ),
             'priority' => 20,
         )
     );
@@ -35,7 +35,7 @@ function wp_bt_customize_register( $wp_customize ) {
         'sanitize_callback' => 'wp_filter_nohtml_kses',
     ) );
     $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'theme_option_setting', array(
-        'label' => __( 'Theme Option', 'wp-bt' ),
+        'label' => __( 'Theme Option', 'wp-bootstrap-4' ),
         'section'    => 'typography',
         'settings'   => 'theme_option_setting',
         'type'    => 'select',
@@ -72,7 +72,7 @@ function wp_bt_customize_register( $wp_customize ) {
         'sanitize_callback' => 'wp_filter_nohtml_kses',
     ) );
     $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'preset_style_setting', array(
-        'label' => __( 'Typography', 'wp-bt' ),
+        'label' => __( 'Typography', 'wp-bootstrap-4' ),
         'section'    => 'typography',
         'settings'   => 'preset_style_setting',
         'type'    => 'select',
@@ -97,7 +97,7 @@ function wp_bt_customize_register( $wp_customize ) {
         'sanitize_callback' => 'wp_filter_nohtml_kses',
     ) );
     $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'preset_color_scheme_setting', array(
-        'label' => __( 'Color Scheme', 'wp-bt' ),
+        'label' => __( 'Color Scheme', 'wp-bootstrap-4' ),
         'section'    => 'typography',
         'settings'   => 'preset_color_scheme_setting',
         'type'    => 'select',
@@ -115,7 +115,7 @@ function wp_bt_customize_register( $wp_customize ) {
     $wp_customize->add_section(
         'header_image',
         array(
-            'title' => __( 'Header Banner', 'wp-bt' ),
+            'title' => __( 'Header Banner', 'wp-bootstrap-4' ),
             'priority' => 30,
         )
     );
@@ -124,7 +124,7 @@ function wp_bt_customize_register( $wp_customize ) {
     $wp_customize->add_control(
         'header_img',
         array(
-            'label' => __( 'Header Image', 'wp-bt' ),
+            'label' => __( 'Header Image', 'wp-bootstrap-4' ),
             'section' => 'header_images',
             'type' => 'text',
         )
@@ -142,29 +142,29 @@ function wp_bt_customize_register( $wp_customize ) {
             $wp_customize,
             'header_bg_color',
             array(
-                'label'      => __( 'Header Banner Background Color', 'wp-bt' ),
+                'label'      => __( 'Header Banner Background Color', 'wp-bootstrap-4' ),
                 'section'    => 'header_image',
                 'settings'   => 'header_bg_color_setting',
             ) )
     );
 
     $wp_customize->add_setting( 'header_banner_title_setting', array(
-        'default' => __( 'WP Bootstrap Framework', 'wp-bt' ),
+        'default' => __( 'WP Bootstrap Framework', 'wp-bootstrap-4' ),
         'sanitize_callback' => 'wp_filter_nohtml_kses',
     ) );
     $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'header_banner_title_setting', array(
-        'label' => __( 'Banner Title', 'wp-bt' ),
+        'label' => __( 'Banner Title', 'wp-bootstrap-4' ),
         'section'    => 'header_image',
         'settings'   => 'header_banner_title_setting',
         'type' => 'text'
     ) ) );
 
     $wp_customize->add_setting( 'header_banner_tagline_setting', array(
-        'default' => __( 'To customize the contents of this header banner and other elements of your site go to Dashboard - Appearance - Customize','wp-bt' ),
+        'default' => __( 'To customize the contents of this header banner and other elements of your site go to Dashboard - Appearance - Customize','wp-bootstrap-4' ),
         'sanitize_callback' => 'wp_filter_nohtml_kses',
     ) );
     $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'header_banner_tagline_setting', array(
-        'label' => __( 'Banner Tagline', 'wp-bt' ),
+        'label' => __( 'Banner Tagline', 'wp-bootstrap-4' ),
         'section'    => 'header_image',
         'settings'   => 'header_banner_tagline_setting',
         'type' => 'text'
@@ -175,7 +175,7 @@ function wp_bt_customize_register( $wp_customize ) {
     ) );
     $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'header_banner_visibility', array(
         'settings' => 'header_banner_visibility',
-        'label'    => __('Remove Header Banner', 'wp-bt'),
+        'label'    => __('Remove Header Banner', 'wp-bootstrap-4'),
         'section'    => 'header_image',
         'type'     => 'checkbox',
     ) ) );
@@ -185,16 +185,16 @@ function wp_bt_customize_register( $wp_customize ) {
    $wp_customize->add_section(
         'site_name_text_color',
         array(
-            'title' => __( 'Other Customizations', 'wp-bt' ),
-            //'description' => __( 'This is a section for the header banner Image.', 'wp-bt' ),
+            'title' => __( 'Other Customizations', 'wp-bootstrap-4' ),
+            //'description' => __( 'This is a section for the header banner Image.', 'wp-bootstrap-4' ),
             'priority' => 40,
         )
     );
     $wp_customize->add_section(
         'colors',
         array(
-            'title' => __( 'Background Color', 'wp-bt' ),
-            //'description' => __( 'This is a section for the header banner Image.', 'wp-bt' ),
+            'title' => __( 'Background Color', 'wp-bootstrap-4' ),
+            //'description' => __( 'This is a section for the header banner Image.', 'wp-bootstrap-4' ),
             'priority' => 50,
             'panel' => 'styling_option_panel',
         )
@@ -202,8 +202,8 @@ function wp_bt_customize_register( $wp_customize ) {
     $wp_customize->add_section(
         'background_image',
         array(
-            'title' => __( 'Background Image', 'wp-bt' ),
-            //'description' => __( 'This is a section for the header banner Image.', 'wp-bt' ),
+            'title' => __( 'Background Image', 'wp-bootstrap-4' ),
+            //'description' => __( 'This is a section for the header banner Image.', 'wp-bootstrap-4' ),
             'priority' => 60,
             'panel' => 'styling_option_panel',
         )
@@ -211,20 +211,20 @@ function wp_bt_customize_register( $wp_customize ) {
 
     // Bootstrap and Fontawesome Option
     $wp_customize->add_setting( 'cdn_assets_setting', array(
-        'default' => __( 'no','wp-bt' ),
+        'default' => __( 'no','wp-bootstrap-4' ),
         'sanitize_callback' => 'wp_filter_nohtml_kses',
     ) );
     $wp_customize->add_control( 
         'cdn_assets',
         array(
-            'label' => __( 'Use CDN for Assets', 'wp-bt' ),
-            'description' => __( 'All Bootstrap Assets and FontAwesome will be loaded in CDN.', 'wp-bt' ),
+            'label' => __( 'Use CDN for Assets', 'wp-bootstrap-4' ),
+            'description' => __( 'All Bootstrap Assets and FontAwesome will be loaded in CDN.', 'wp-bootstrap-4' ),
             'section' => 'site_name_text_color',
             'settings' => 'cdn_assets_setting',
 	        'type'    => 'select',
 	        'choices' => array(
-	            'yes' => __( 'Yes', 'wp-bt' ),
-	            'no' => __( 'No', 'wp-bt' ),
+	            'yes' => __( 'Yes', 'wp-bootstrap-4' ),
+	            'no' => __( 'No', 'wp-bootstrap-4' ),
         	)
         )
     );
@@ -234,7 +234,7 @@ function wp_bt_customize_register( $wp_customize ) {
     $wp_customize->add_section(
         'gtm',
         array(
-            'title' => __( 'Google Tag Manager', 'wp-bt' ),
+            'title' => __( 'Google Tag Manager', 'wp-bootstrap-4' ),
             'priority' => 70,
             'capability' => 'edit_theme_options',
         )
@@ -248,7 +248,7 @@ function wp_bt_customize_register( $wp_customize ) {
     ) );
 
     $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'gtm_id', array(
-        'label' => __( 'GTM Container ID', 'wp-bt' ),
+        'label' => __( 'GTM Container ID', 'wp-bootstrap-4' ),
         'section'    => 'gtm',
         'settings'   => 'gtm_id',
         'type' => 'text'
@@ -265,11 +265,11 @@ function wp_bt_customize_register( $wp_customize ) {
 
     // Add control for logo uploader
     $wp_customize->add_setting( 'wp_bt_logo', array(
-        //'default' => __( '', 'wp-bt' ),
+        //'default' => __( '', 'wp-bootstrap-4' ),
         'sanitize_callback' => 'esc_url',
     ) );
     $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'wp_bt_logo', array(
-        'label'    => __( 'Upload Logo (replaces text)', 'wp-bt' ),
+        'label'    => __( 'Upload Logo (replaces text)', 'wp-bootstrap-4' ),
         'section'  => 'title_tagline',
         'settings' => 'wp_bt_logo',
     ) ) );

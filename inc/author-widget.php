@@ -19,12 +19,12 @@ function codexworld_author_widget() {
 // Widget class
 class Codexworld_Author_Widget extends WP_Widget {
 
-	function codexworld_author_widget() {
+    function __construct() {
 	
 		// Widget settings
 		$widget_ops = array (
 			'classname' => 'codexworld_author_widget',
-			'description' => __('A widget for display author information', 'wp-bt')
+			'description' => __('A widget for display author information', 'wp-bootstrap-4')
 		);
 	
 		// Widget control settings
@@ -35,7 +35,7 @@ class Codexworld_Author_Widget extends WP_Widget {
 		);
 	
 		// Create the widget
-		$this->WP_Widget( 'codexworld_author_widget', __('Author Profile', 'wp-bt'), $widget_ops, $control_ops );
+		$this->WP_Widget( 'codexworld_author_widget', __('Author Profile', 'wp-bootstrap-4'), $widget_ops, $control_ops );
 		
 	}
 
@@ -128,37 +128,37 @@ class Codexworld_Author_Widget extends WP_Widget {
 	
 		<!-- Widget Title: Text Input -->
 		<p>
-			<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e('Title:', 'wp-bt') ?></label>
+			<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e('Title:', 'wp-bootstrap-4') ?></label>
 			<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" value="<?php echo $instance['title']; ?>" />
 		</p>
 	
 		<!-- Picture URL: Text Input -->
 		<p>
-			<label for="<?php echo $this->get_field_id( 'picture' ); ?>"><?php _e('Picture URL:', 'wp-bt') ?></label>
+			<label for="<?php echo $this->get_field_id( 'picture' ); ?>"><?php _e('Picture URL:', 'wp-bootstrap-4') ?></label>
 			<input class="widefat" id="<?php echo $this->get_field_id( 'picture' ); ?>" name="<?php echo $this->get_field_name( 'picture' ); ?>" value="<?php echo $instance['picture']; ?>" />
 		</p>
 		
 		<!-- Name: Text Input -->
 		<p>
-			<label for="<?php echo $this->get_field_id( 'name' ); ?>"><?php _e('Name:', 'wp-bt') ?></label>
+			<label for="<?php echo $this->get_field_id( 'name' ); ?>"><?php _e('Name:', 'wp-bootstrap-4') ?></label>
 			<input type="text" class="widefat" id="<?php echo $this->get_field_id( 'name' ); ?>" name="<?php echo $this->get_field_name( 'name' ); ?>" value="<?php echo $instance['name']; ?>" />
 		</p>
 		
 		<!-- Introduction: Text Input -->
 		<p>
-			<label for="<?php echo $this->get_field_id( 'introduction' ); ?>"><?php _e('Introduction:', 'wp-bt') ?></label>
+			<label for="<?php echo $this->get_field_id( 'introduction' ); ?>"><?php _e('Introduction:', 'wp-bootstrap-4') ?></label>
 			<input type="text" class="widefat" id="<?php echo $this->get_field_id( 'introduction' ); ?>" name="<?php echo $this->get_field_name( 'introduction' ); ?>" value="<?php echo $instance['introduction']; ?>" />
 		</p>
 		
 		<!-- Location: Text Input -->
 		<p>
-			<label for="<?php echo $this->get_field_id( 'location' ); ?>"><?php _e('Location:', 'wp-bt') ?></label>
+			<label for="<?php echo $this->get_field_id( 'location' ); ?>"><?php _e('Location:', 'wp-bootstrap-4') ?></label>
 			<input type="text" class="widefat" id="<?php echo $this->get_field_id( 'location' ); ?>" name="<?php echo $this->get_field_name( 'location' ); ?>" value="<?php echo $instance['location']; ?>" />
 		</p>
 		
 		<!-- Email: Text Input -->
 		<p>
-			<label for="<?php echo $this->get_field_id( 'email' ); ?>"><?php _e('Email:', 'wp-bt') ?></label>
+			<label for="<?php echo $this->get_field_id( 'email' ); ?>"><?php _e('Email:', 'wp-bootstrap-4') ?></label>
 			<input type="text" class="widefat" id="<?php echo $this->get_field_id( 'email' ); ?>" name="<?php echo $this->get_field_name( 'email' ); ?>" value="<?php echo $instance['email']; ?>" />
 		</p>
 		

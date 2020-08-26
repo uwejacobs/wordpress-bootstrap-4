@@ -40,7 +40,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     }
     wp_body_open(); ?>
 <div id="page" class="site">
-	<a class="screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'wp-bt' ); ?></a>
+	<a class="screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'wp-bootstrap-4' ); ?></a>
     <?php if(!is_page_template( 'blank-page.php' ) && !is_page_template( 'blank-page-with-container.php' )): ?>
 	<header id="masthead" class="site-header navbar-static-top <?php echo wp_bt_bg_class(); ?>" role="banner">
         <div class="container">
@@ -94,7 +94,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     if(get_theme_mod( 'header_banner_tagline_setting' )){
                         echo esc_html(get_theme_mod( 'header_banner_tagline_setting' ));
                 }else{
-                        echo esc_html__('To customize the contents of this header banner and other elements of your site, go to Dashboard > Appearance > Customize','wp-bt');
+                        echo esc_html__('To customize the contents of this header banner and other elements of your site, go to Dashboard > Appearance > Customize','wp-bootstrap-4');
                     }
                     ?>
                 </p>
@@ -102,6 +102,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
     <?php endif; ?>
 	<div id="content" class="site-content">
-		<div class="container">
+		<div class="container<?php if(is_page_template( 'fluid.php' ) ) echo "-fluid m-0 p-0"; ?>">
 			<div class="row">
                 <?php endif; ?>
