@@ -2,9 +2,6 @@
 /**
  * Template part for displaying page content
  *
- * @link https://codex.wordpress.org/Template_Hierarchy
- *
- * @package WP_Bootstrap_Starter
  */
 
 ?>

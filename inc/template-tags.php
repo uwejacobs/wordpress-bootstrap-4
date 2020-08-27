@@ -2,9 +2,6 @@
 /**
  * Custom template tags for this theme
  *
- * Eventually, some of the functionality here could be replaced by core features.
- *
- * @package WP_Bootstrap_Starter
  */
 
 if ( ! function_exists( 'wp_bt_posted_on' ) ) :
@@ -23,16 +20,18 @@ function wp_bt_posted_on() {
 	);
 
 	$posted_on = sprintf(
+        	/* translators: %s: post date */
 		esc_html_x( 'Posted on %s', 'post date', 'wp-bootstrap-4-essentials' ),
 		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 	);
 
 	$byline = sprintf(
+        	/* translators: %s: post author */
 		esc_html_x( 'by %s', 'post author', 'wp-bootstrap-4-essentials' ),
 		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 	);
 
-	echo '<span class="posted-on">' . $posted_on . '</span> | <span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK.
+	echo '<span class="posted-on">' . $posted_on . '</span> | <span class="byline"> ' . $byline . '</span>'; 
 
     if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
         echo ' | <span class="comments-link"><i class="fa fa-comments" aria-hidden="true"></i> ';
@@ -54,13 +53,15 @@ function wp_bt_entry_footer() {
 		/* translators: used between list items, there is a space after the comma */
 		$categories_list = get_the_category_list( esc_html__( ', ', 'wp-bootstrap-4-essentials' ) );
 		if ( $categories_list && wp_bt_categorized_blog() ) {
-			printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', 'wp-bootstrap-4-essentials' ) . '</span>', $categories_list ); // WPCS: XSS OK.
+		        /* translators: %s, category_list */
+			printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', 'wp-bootstrap-4-essentials' ) . '</span>', $categories_list ); 
 		}
 
 		/* translators: used between list items, there is a space after the comma */
 		$tags_list = get_the_tag_list( '', esc_html__( ', ', 'wp-bootstrap-4-essentials' ) );
 		if ( $tags_list ) {
-			printf( ' | <span class="tags-links">' . esc_html__( 'Tagged %1$s', 'wp-bootstrap-4-essentials' ) . '</span>', $tags_list ); // WPCS: XSS OK.
+        		/* translators: %s: tag list */
+			printf( ' | <span class="tags-links">' . esc_html__( 'Tagged %1$s', 'wp-bootstrap-4-essentials' ) . '</span>', $tags_list ); 
 		}
 	}
 
@@ -134,7 +135,7 @@ if ( ! function_exists( 'wp_bt_comment' ) ) :
 
             <li id="comment-<?php comment_ID(); ?>" <?php comment_class( 'media' ); ?>>
             <div class="comment-body">
-                <?php _e( 'Pingback:', 'wp-bootstrap-4-essentials' ); ?> <?php comment_author_link(); ?> <?php edit_comment_link( __( 'Edit', 'wp-bootstrap-4-essentials' ), '<span class="edit-link">', '</span>' ); ?>
+                <?php esc_attr_e( 'Pingback:', 'wp-bootstrap-4-essentials' ); ?> <?php comment_author_link(); ?> <?php edit_comment_link( __( 'Edit', 'wp-bootstrap-4-essentials' ), '<span class="edit-link">', '</span>' ); ?>
             </div>
 
         <?php else : ?>
@@ -149,11 +150,13 @@ if ( ! function_exists( 'wp_bt_comment' ) ) :
                     <div class="media-body-wrap card">
 
                         <div class="card-header">
+                            <?php /* translators: 1: the comment author's link */ ?>
                             <h5 class="mt-0"><?php printf( __( '%s <span class="says">says:</span>', 'wp-bootstrap-4-essentials' ), sprintf( '<cite class="fn">%s</cite>', get_comment_author_link() ) ); ?></h5>
                             <div class="comment-meta">
                                 <a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>">
                                     <time datetime="<?php comment_time( 'c' ); ?>">
-                                        <?php printf( _x( '%1$s at %2$s', '1: date, 2: time', 'wp-bootstrap-4-essentials' ), get_comment_date(), get_comment_time() ); ?>
+                                        <?php /* translators: 1: date, 2: time */
+printf( _x( '%1$s at %2$s', '1: date, 2: time', 'wp-bootstrap-4-essentials' ), esc_html(get_comment_date()), esc_html(get_comment_time()) ); ?>
                                     </time>
                                 </a>
                                 <?php edit_comment_link( __( '<i style="margin-left: 5px;" class="fas fa-edit"></i> Edit', 'wp-bootstrap-4-essentials' ), '<span class="edit-link">', '</span>' ); ?>

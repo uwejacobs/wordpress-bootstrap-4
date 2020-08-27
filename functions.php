@@ -2,9 +2,6 @@
 /**
  * WP BT functions and definitions
  *
- * @link https://developer.wordpress.org/themes/basics/theme-functions/
- *
- * @package WP_Bootstrap_Starter
  */
 
 if ( ! function_exists( 'wp_bt_setup' ) ) :
@@ -64,10 +61,10 @@ function wp_bt_setup() {
 	// Add theme support for selective refresh for widgets.
 	add_theme_support( 'customize-selective-refresh-widgets' );
 
-    function wp_boostrap_starter_add_editor_styles() {
+    function wp_bootstrap_essentials_add_editor_styles() {
         add_editor_style( 'custom-editor-style.css' );
     }
-    add_action( 'admin_init', 'wp_boostrap_starter_add_editor_styles' );
+    add_action( 'admin_init', 'wp_bootstrap_essentials_add_editor_styles' );
 
 }
 endif;
@@ -78,18 +75,17 @@ add_action( 'after_setup_theme', 'wp_bt_setup' );
  * Add Welcome message to dashboard
  */
 function wp_bt_reminder(){
-        $theme_page_url = 'https://afterimagedesigns.com/wp_bt/?dashboard=1';
-
             if(!get_option( 'triggered_welcomet')){
+	        /* translators: 1: url. */
                 $message = sprintf(__( 'Welcome to WP Bootstrap Theme! Before diving in to your new theme, please visit the <a style="color: #fff; font-weight: bold;" href="%1$s" target="_blank">theme\'s</a> page for access to dozens of tips and in-depth tutorials.', 'wp-bootstrap-4-essentials' ),
-                    esc_url( $theme_page_url )
+                    esc_url( 'https://github.com/uwejacobs/wp-bootstrap-4-essentials' )
                 );
 
                 printf(
                     '<div class="notice is-dismissible" style="background-color: #6C2EB9; color: #fff; border-left: none;">
                         <p>%1$s</p>
                     </div>',
-                    $message
+                    esc_html($message)
                 );
                 add_option( 'triggered_welcomet', '1', '', 'yes' );
             }
@@ -161,7 +157,7 @@ add_action( 'widgets_init', 'wp_bt_widgets_init' );
 function wp_bt_scripts() {
 	// load bootstrap css
     if ( get_theme_mod( 'cdn_assets_setting' ) === 'yes' ) {
-        wp_enqueue_style( 'wp-bootstrap-4-essentials-bootstrap-css', 'https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css' );
+        wp_enqueue_style( 'wp-bootstrap-4-essentials-bootstrap-css', 'https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css' );
         wp_enqueue_style( 'wp-bootstrap-4-essentials-fontawesome-cdn', 'https://use.fontawesome.com/releases/v5.14.0/css/all.css' );
     } else {
         wp_enqueue_style( 'wp-bootstrap-4-essentials-bootstrap-css', get_template_directory_uri() . '/inc/assets/css/bootstrap.min.css' );
@@ -169,7 +165,7 @@ function wp_bt_scripts() {
     }
 	// load bootstrap css
 	// load AItheme styles
-	// load WP Bootstrap Starter styles
+	// load WP Bootstrap Eseentials styles
 	wp_enqueue_style( 'wp-bootstrap-4-essentials-style', get_stylesheet_uri() );
     if(get_theme_mod( 'theme_option_setting' ) && get_theme_mod( 'theme_option_setting' ) !== 'default') {
         wp_enqueue_style( 'wp-bootstrap-4-essentials-'.get_theme_mod( 'theme_option_setting' ), get_template_directory_uri() . '/inc/assets/css/presets/theme-option/'.get_theme_mod( 'theme_option_setting' ).'.css', false, '' );
@@ -223,7 +219,7 @@ function wp_bt_scripts() {
 	// load bootstrap js
     if ( get_theme_mod( 'cdn_assets_setting' ) === 'yes' ) {
         wp_enqueue_script('wp-bootstrap-4-essentials-popper', 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js', array(), '1.16.0', true );
-    	wp_enqueue_script('wp-bootstrap-4-essentials-bootstrapjs', 'https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js', array(), '4.5.0', true );
+    	wp_enqueue_script('wp-bootstrap-4-essentials-bootstrapjs', 'https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js', array(), '4.5.0', true );
     } else {
         wp_enqueue_script('wp-bootstrap-4-essentials-popper', get_template_directory_uri() . '/inc/assets/js/popper.min.js', array(), '1.16.0', true );
         wp_enqueue_script('wp-bootstrap-4-essentials-bootstrapjs', get_template_directory_uri() . '/inc/assets/js/bootstrap.min.js', array(), '4.5.0', true );
@@ -317,4 +313,4 @@ require_once(get_template_directory() . '/inc/font-awesome-5.php');
 
 
 
-require_once(get_template_directory() . '/inc/author-widget.php');
+#require_once(get_template_directory() . '/inc/author-widget.php');

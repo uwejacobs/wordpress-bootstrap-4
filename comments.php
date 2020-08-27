@@ -5,9 +5,6 @@
  * This is the template that displays the area of the page that contains both the current comments
  * and the comment form.
  *
- * @link https://codex.wordpress.org/Template_Hierarchy
- *
- * @package WP_Bootstrap_Starter
  */
 
 /*
@@ -36,10 +33,10 @@ if ( post_password_required() ) {
 					'<span>' . esc_html(get_the_title()) . '</span>'
 				);
             } else {
-                printf( // WPCS: XSS OK.
+                printf(
 					/* translators: 1: comment count number, 2: title. */
-					esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $underscore_comment_count, 'comments title', 'wp-bootstrap-4-essentials' ) ),
-					esc_html( number_format_i18n( $underscore_comment_count ) ),
+					esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $comments_number, 'comments title', 'wp-bootstrap-4-essentials' ) ),
+					esc_html( number_format_i18n( $comments_number ) ),
 					'<span>' . esc_html( get_the_title() ) . '</span>'
 				);
             }

@@ -4,9 +4,6 @@
  *
  * Contains the closing of the #content div and all content after.
  *
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
- *
- * @package WP_Bootstrap_Starter
  */
 
 ?>
@@ -15,12 +12,12 @@
 		</div><!-- .container -->
 	</div><!-- #content -->
     <?php get_template_part( 'footer-widget' ); ?>
-	<footer id="colophon" class="site-footer <?php echo wp_bt_bg_class(); ?>" role="contentinfo">
+	<footer id="colophon" class="site-footer <?php echo esc_attr(wp_bt_bg_class()); ?>" role="contentinfo">
 		<div class="container pt-3 pb-3">
             <div class="site-info">
-                &copy; <?php echo date('Y'); ?> <?php echo '<a href="'.home_url().'">'.get_bloginfo('name').'</a>'; ?>
+                &copy; <?php echo esc_html(date('Y')); ?> <?php echo '<a href="'.esc_url(home_url()).'">'.esc_html(get_bloginfo('name')).'</a>'; ?>
                 <span class="sep"> | </span>
-                <a class="credits" href="https://afterimagedesigns.com/wp_bt/" target="_blank" title="WordPress Technical Support"><?php echo esc_html__('Bootstrap WordPress Theme','wp-bootstrap-4-essentials'); ?></a>
+                <a class="credits" href="https://github.com/uwejacobs/wp-bootstrap-4-essentials" target="_blank" title="WordPress Technical Support"><?php echo esc_html__('Bootstrap WordPress Essentials Theme','wp-bootstrap-4-essentials'); ?></a>
 
             </div><!-- close .site-info -->
 		</div>

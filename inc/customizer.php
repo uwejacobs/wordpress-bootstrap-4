@@ -2,7 +2,6 @@
 /**
  * WP BT Theme Customizer
  *
- * @package WP_Bootstrap_Starter
  */
 
 /**

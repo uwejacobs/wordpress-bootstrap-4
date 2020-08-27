@@ -2,9 +2,6 @@
 /**
  * The template for displaying search results pages
  *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#search-result
- *
- * @package WP_Bootstrap_Starter
  */
 
 get_header(); ?>
@@ -16,6 +13,7 @@ get_header(); ?>
 		if ( have_posts() ) : ?>
 
 			<header class="page-header">
+			        <?php /* translators: 1: search result. */ ?>
 				<h1 class="page-title"><?php printf( esc_html__( 'Search Results for: %s', 'wp-bootstrap-4-essentials' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
 			</header><!-- .page-header -->
 

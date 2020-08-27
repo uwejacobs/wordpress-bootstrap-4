@@ -2,9 +2,6 @@
 /**
  * Jetpack Compatibility File
  *
- * @link https://jetpack.com/
- *
- * @package WP_Bootstrap_Starter
  */
 
 /**

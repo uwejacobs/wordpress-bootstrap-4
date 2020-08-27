@@ -3,10 +3,6 @@
  * The header for our theme
  *
  * This is the template that displays all of the <head> section and everything up until <div id="content">
- *
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
- *
- * @package WP_Bootstrap_Starter
  */
 
 ?><!DOCTYPE html>
@@ -24,7 +20,7 @@
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','" . $gtm_id . "');</script>
+})(window,document,'script','dataLayer','" . esc_attr($gtm_id) . "');</script>
 <!-- End Google Tag Manager -->";
     }
     wp_head(); ?>
@@ -34,7 +30,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <?php
     if($gtm_id){
         echo '<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=' . $gtm_id . '"
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=' . esc_attr($gtm_id) . '"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->';
     }
@@ -42,7 +38,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div id="page" class="site">
 	<a class="screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'wp-bootstrap-4-essentials' ); ?></a>
     <?php if(!is_page_template( 'blank-page.php' ) && !is_page_template( 'blank-page-with-container.php' )): ?>
-	<header id="masthead" class="site-header navbar-static-top <?php echo wp_bt_bg_class(); ?>" role="banner">
+	<header id="masthead" class="site-header navbar-static-top <?php echo esc_attr(wp_bt_bg_class()); ?>" role="banner">
         <div class="container">
             <nav class="navbar navbar-expand-xl p-0">
                 <div class="navbar-brand">
