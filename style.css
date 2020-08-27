@@ -42,6 +42,8 @@ Tags: blog, custom-menu, featured-images, threaded-comments, translation-ready, 
 body {
   margin: 0;
   -webkit-font-smoothing: auto;
+  -ms-word-wrap: break-word;
+  word-wrap: break-word;
 }
 
 article,
@@ -514,7 +516,6 @@ body:not(.theme-preset-active) #masthead .navbar-nav > li.current_page_item > a 
 .posts-navigation .nav-previous,
 .post-navigation .nav-previous {
   float: left;
-  width: 50%;
 }
 
 .comment-navigation .nav-next,
@@ -522,7 +523,6 @@ body:not(.theme-preset-active) #masthead .navbar-nav > li.current_page_item > a 
 .post-navigation .nav-next {
   float: right;
   text-align: right;
-  width: 50%;
 }
 .comment-content.card-block {
   padding: 20px;

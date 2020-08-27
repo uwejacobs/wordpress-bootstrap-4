@@ -1,17 +1,12 @@
 <?php
 /**
-  * Font Awesome 5 Menu Handling + Shortcodes
+  * Font Awesome 5 Menu Handling
   * see https://github.com/cogdog/font-awesome-5-menus
-  * Shortcode Examples:
-  * [fa class="fas fa-apple-alt fa-5x"]
-  * [fa-stack class="fa-2x"][fa class="fas fa-camera fa-stack-1x"]<span style="color:Tomato">[fa class="fas fa-ban fa-stack-2x"]</span>[/fa-stack]
   */
 
     function FontAwesomeFive_init(){
         add_filter( 'nav_menu_css_class', 'nav_menu_css_class' );
         add_filter( 'walker_nav_menu_start_el', 'walker_nav_menu_start_el', 10, 4 );
-        //add_shortcode( 'fa', 'shortcode_icon' );
-        //add_shortcode( 'fa-stack', 'shortcode_stack' );        
     }
 
     function nav_menu_css_class( $classes ){
@@ -57,31 +52,5 @@
         }
         return $item_output;
     }
-
-    function shortcode_icon( $atts ){
-        $a = shortcode_atts( array(
-            'class' => ''
-        ), $atts );
-        if( !empty( $a[ 'class' ] ) ){
-            $class_array = explode( ' ', $a[ 'class' ] );
-            return '<i class="' . implode( ' ', $class_array ) . '"></i>';
-        }
-    }
     
-    function shortcode_stack( $atts, $content = null ){
-        $a = shortcode_atts( array(
-            'class' => ''
-        ), $atts );
-        $class_array = array();
-        if( empty( $a[ 'class' ] ) ){
-            $class_array = array( 'fa-stack' );
-        } else {
-            $class_array = explode( ' ', $a[ 'class' ] );
-            if( !in_array( 'fa-stack', $class_array ) ){
-                $class_array[] = 'fa-stack';
-            }
-        }
-        return '<span class="' . implode( ' ', $class_array ) . '">' . do_shortcode( $content ) . '</span>';
-    }
-    
-add_action('init', 'FontAwesomeFive_init');
+    add_action('init', 'FontAwesomeFive_init');

@@ -24,7 +24,7 @@ Page templates
 
 Other features:
 * Currently using Bootstrap v4.5
-* Font Awesome 5 integrated
+* Font Awesome 5 ready (install Font Awesome plugin separately)
 * Widgetized footer area
 * WooCommerce ready
 * Compatible with Contact Form 7

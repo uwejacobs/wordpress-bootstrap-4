@@ -24,7 +24,7 @@ Page templates
 
 Other features:
 * Currently using Bootstrap v4.5
-* Font Awesome 5 integrated
+* Font Awesome 5 ready (install Font Awesome plugin separately)
 * Widgetized footer area
 * WooCommerce ready
 * Compatible with Contact Form 7
@@ -51,7 +51,6 @@ We suggest adding the Complete Bootstrap 4 Shortcodes plugin.
 * normalize.css http://necolas.github.io/normalize.css/, (C) 2012-2016 Nicolas Gallagher and Jonathan Neal, [MIT](http://opensource.org/licenses/MIT)
 * Bootstrap http://getbootstrap.com, (C) 2011-2015 Twitter, Inc., [MIT] (https://github.com/twbs/bootstrap/blob/master/LICENSE)
 * WP Bootstrap Navwalker https://github.com/wp-bootstrap/wp-bootstrap-navwalker, [GPLv3](https://www.gnu.org/licenses/gpl-3.0.en.html)
-* Font Awesome icons, Copyright (C) Dave Gandy License: SIL Open Font License, version 1.1. - http://fontawesome.io/
 
 == Changelog ==
 

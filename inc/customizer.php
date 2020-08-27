@@ -208,26 +208,6 @@ function wp_bt_customize_register( $wp_customize ) {
         )
     );
 
-    // Bootstrap and Fontawesome Option
-    $wp_customize->add_setting( 'cdn_assets_setting', array(
-        'default' => __( 'no','wp-bootstrap-4-essentials' ),
-        'sanitize_callback' => 'wp_filter_nohtml_kses',
-    ) );
-    $wp_customize->add_control( 
-        'cdn_assets',
-        array(
-            'label' => __( 'Use CDN for Assets', 'wp-bootstrap-4-essentials' ),
-            'description' => __( 'All Bootstrap Assets and FontAwesome will be loaded in CDN.', 'wp-bootstrap-4-essentials' ),
-            'section' => 'site_name_text_color',
-            'settings' => 'cdn_assets_setting',
-	        'type'    => 'select',
-	        'choices' => array(
-	            'yes' => __( 'Yes', 'wp-bootstrap-4-essentials' ),
-	            'no' => __( 'No', 'wp-bootstrap-4-essentials' ),
-        	)
-        )
-    );
-
 
     /*Google Tag Manager*/
     $wp_customize->add_section(
